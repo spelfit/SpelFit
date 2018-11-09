@@ -1,5 +1,6 @@
 package edu.spelman.spelfitscmail.spelfit.sql;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -41,8 +42,68 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void
+    public void addUser(User user){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_USER_NAME, user.getName());
+        values.put(COLUMN_USER_EMAIL, user.getEmail());
+        values.put(COLUMN_USER_PASSWORD, user.getPassword());
 
+        db.insert(TABLE_USER, null, values);
+        db.close();
+
+    }
+
+    public boolean checkUser(String email){
+        String[] columns ={
+                COLUMN_USER_ID
+        };
+        SQLiteDatabase db = this.getWritableDatabase();
+        String selection = COLUMN_USER_EMAIL + "=?";
+        String[] selectionArgs = { email };
+
+        Cursor cursor = db.query(TABLE_USER,
+                columns,
+                selection,
+                selectionArgs,
+                null,
+                null,
+                null);
+
+        int cursorCount = cursor.getCount();
+        cursor.close();
+        db.close();
+
+        if (cursorCount > 0){
+            return true;
+        }
+        return false;
+    }
+    public boolean checkUser(String email, String password) {
+        String[] columns = {
+                COLUMN_USER_ID
+        };
+        SQLiteDatabase db = this.getWritableDatabase();
+        String selection = COLUMN_USER_EMAIL + "=?" + "AND" + COLUMN_USER_PASSWORD +"=?";
+        String[] selectionArgs = {email, password};
+
+        Cursor cursor = db.query(TABLE_USER,
+                columns,
+                selection,
+                selectionArgs,
+                null,
+                null,
+                null);
+
+        int cursorCount = cursor.getCount();
+        cursor.close();
+        db.close();
+
+        if (cursorCount > 0) {
+            return true;
+        }
+        return false;
+    }
 
 
 }
