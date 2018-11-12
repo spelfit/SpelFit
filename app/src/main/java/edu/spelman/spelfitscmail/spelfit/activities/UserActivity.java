@@ -1,4 +1,5 @@
 package edu.spelman.spelfitscmail.spelfit.activities;
+import edu.spelman.spelfitscmail.spelfit.R;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;

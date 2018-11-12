@@ -2,6 +2,7 @@ package edu.spelman.spelfitscmail.spelfit.activities;
 
 
 import android.os.Bundle;
+import edu.spelman.spelfitscmail.spelfit.R;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
@@ -77,10 +78,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View v){
         switch(v.getId()){
-            case R.id.appCompatButtonRegister;
+            case R.id.appCompatButtonRegister:
                 postDataToSQLite();
                 break;
-            case R.id.appCompatTextViewLoginLink;
+            case R.id.appCompatTextViewLoginLink:
                 finish();
                 break;
         }

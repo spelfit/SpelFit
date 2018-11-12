@@ -3,6 +3,7 @@ package edu.spelman.spelfitscmail.spelfit.activities;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import edu.spelman.spelfitscmail.spelfit.R;
 import android.support.design.widget.Snackbar;
 import android.content.Intent;
 import android.support.v7.widget.AppCompatButton;
@@ -92,7 +93,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             emptyInputEditText();
             startActivity(accountsIntent);
         } else{
-            Snackbar.make(nestedScrollView, getString(R.string.error_valid_email_password), Snackbar.LENGTH_LONG.show();
+            Snackbar.make(nestedScrollView, getString(R.string.error_valid_email_password), Snackbar.LENGTH_LONG.show());
         }
     }
     private void  emptyInputEditText(){

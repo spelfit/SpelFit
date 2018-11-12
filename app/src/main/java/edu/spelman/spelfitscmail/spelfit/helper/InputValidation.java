@@ -32,11 +32,11 @@ public class InputValidation {
 
     public boolean isInputEditTextEmail(TextInputEditText textInputEditText, TextInputLayout textInputLayout, String message){
         String value = textInputEditText.getText().toString().trim();
-        if (value.isEmpty() || Patterns.EMAIL_ADDRESS.matcher(value.matches())){
+        if (value.isEmpty() || Patterns.EMAIL_ADDRESS.matcher(value.matches()){
             textInputLayout.setError(message);
             hideKeyboardFrom(textInputEditText);
             return false;
-        } else{
+        } else {
             textInputLayout.setErrorEnabled(false);
         }
         return true;
