@@ -4,7 +4,10 @@ import android.app.Activity;
 import android.content.Context;
 import android.util.Patterns;
 import android.view.WindowManager;
+import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.support.design.widget.TextInputEditText;
+import android.support.design.widget.TextInputLayout;
 
 public class InputValidation {
 

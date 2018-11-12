@@ -1,9 +1,12 @@
 package edu.spelman.spelfitscmail.spelfit.sql;
 
+import edu.spelman.spelfitscmail.spelfit.model.User;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.Cursor;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
