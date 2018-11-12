@@ -2,6 +2,7 @@ package edu.spelman.spelfitscmail.spelfit.activities;
 
 
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.widget.NestedScrollView;
@@ -10,7 +11,6 @@ import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatTextView;
 import android.view.View;
 
-import android.support.design.widget.Snackbar;
 import edu.spelman.spelfitscmail.spelfit.helper.InputValidation;
 import edu.spelman.spelfitscmail.spelfit.model.User;
 import edu.spelman.spelfitscmail.spelfit.sql.DatabaseHelper;

@@ -67,10 +67,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v){
         switch (v.getId()){
-            case R.id.appCompatButtonLogin;
+            case R.id.appCompatButtonLogin:
                 verifyFromSQLite();
                 break;
-            case R.id.textViewLinkRegister;
+            case R.id.textViewLinkRegister:
                 Intent intentRegister = new Intent(getApplicationContext(), RegisterActivity.class);
                 startActivity(intentRegister);
                 break;
