@@ -29,7 +29,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private AppCompatButton appCompatButtonLogin;
     private AppCompatTextView textViewLinkRegister;
-    private InputValidation InputValidation;
+    private InputValidation inputValidation;
     private DatabaseHelper databaseHelper;
 
 
@@ -78,13 +78,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
     }
     private void verifyFromSQLite(){
-        if (!inputValidation.isInputEditTextFilled(textInputEditTextEmail, textInputLayoutEmail, getString(R.string.error_message_email))){
+        if (!inputValidation.isinputEditTextFilled(textInputEditTextEmail, textInputLayoutEmail, getString(R.string.error_message_email))){
             return;
         }
         if (!inputValidation.isInputEditTextEmail(textInputEditTextEmail, textInputLayoutEmail, getString(R.string.error_message_email))){
             return;
         }
-        if (!inputValidation.isInputEditTextFilled(textInputEditTextPassword, textInputLayoutPassword, getString(R.string.error_message_email))){
+        if (!inputValidation.isinputEditTextFilled(textInputEditTextPassword, textInputLayoutPassword, getString(R.string.error_message_email))){
             return;
         }
         if (databaseHelper.checkUser(textInputEditTextEmail.getText().toString().trim(), textInputEditTextPassword.getText().toString().trim())){
@@ -93,7 +93,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             emptyInputEditText();
             startActivity(accountsIntent);
         } else{
-            Snackbar.make(nestedScrollView, getString(R.string.error_valid_email_password), Snackbar.LENGTH_LONG.show());
+            Snackbar.make(nestedScrollView, getString(R.string.error_valid_email_password), Snackbar.LENGTH_LONG);
         }
     }
     private void  emptyInputEditText(){
